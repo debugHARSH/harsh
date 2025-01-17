@@ -11,349 +11,401 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
-            color: #333;
+            background: #121212;
+            color: #ffffff;
             overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #6a11cb;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        nav .menu a:hover {
+            color: #6a11cb;
+        }
+
+        /* Intro Animation */
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: fadeOut 3s ease forwards;
+            animation-delay: 3s;
+        }
+
+        .intro h1 {
+            font-size: 3em;
+            color: #f1c40f;
+            text-align: center;
+            animation: slideDown 1.5s ease;
+        }
+
+        .intro span {
+            display: block;
+            font-size: 1.2em;
+            color: #ffffff;
+            margin-top: 20px;
+            animation: fadeIn 2s ease;
+            animation-delay: 1s;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         /* Header Section */
         header {
-            background: #1D3557;
-            color: #F1C40F;
-            padding: 80px 20px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 100px 20px 60px;
             text-align: center;
-            position: relative;
-            z-index: 2;
         }
+
         header h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             margin: 0;
-            transition: transform 0.5s ease;
+            animation: textGlow 1.5s infinite alternate;
         }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px #6a11cb, 0 0 20px #2575fc;
+            }
+            to {
+                text-shadow: 0 0 20px #f1c40f, 0 0 30px #f1c40f;
+            }
+        }
+
         header p {
-            font-size: 1.5em;
+            font-size: 1.8em;
             margin-top: 10px;
-        }
-        header:hover h1 {
-            transform: translateY(-10px);
         }
 
         /* Profile Section */
         .profile-section {
             text-align: center;
-            margin: 50px auto;
+            margin-top: 70px;
             padding: 20px;
-            animation: fadeIn 1s ease-in-out;
         }
-        .profile-section img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid #F1C40F;
-            transition: transform 0.3s ease;
-        }
-        .profile-section img:hover {
-            transform: scale(1.1);
-        }
+
         .profile-section h2 {
-            font-size: 2.5em;
-            color: #1D3557;
+            font-size: 3em;
+            color: #6a11cb;
             margin-top: 20px;
         }
-        .profile-section p {
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 2em;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* About Me Section */
+        .about-section {
+            text-align: center;
+            padding: 50px 20px;
+            background: #1d1d1d;
+            transition: background 0.5s;
+        }
+
+        .about-section:hover {
+            background: linear-gradient(to right, #1d1d1d, #6a11cb);
+        }
+
+        .about-section h2 {
+            font-size: 3em;
+            color: #ffffff;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            color: #d3d3d3;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+
+        /* Work Section with Hover Effects */
+        .work-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .work-section h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .work-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .work-card {
+            background: #1d1d1d;
+            padding: 30px;
+            border-radius: 10px;
+            color: #ffffff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Skill Progress Bars */
+        .progress-bar {
+            margin-top: 20px;
             font-size: 1.2em;
         }
 
-        /* Navigation */
-        nav {
+        .progress-bar label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .progress {
+            height: 10px;
+            background-color: #6a11cb;
+            border-radius: 5px;
+        }
+
+        /* Testimonial Section */
+        .testimonials-section {
             text-align: center;
-            margin: 30px 0;
-            z-index: 1;
-            position: relative;
-        }
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            margin: 0 15px;
-            background: linear-gradient(to right, #F1C40F, #F39C12);
-            padding: 12px 25px;
-            border-radius: 25px;
-            transition: background 0.3s, transform 0.3s;
-        }
-        nav a:hover {
-            background: linear-gradient(to right, #F39C12, #F1C40F);
-            transform: scale(1.1);
+            padding: 50px 20px;
+            background: #1d1d1d;
         }
 
-        /* Section */
-        section {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 40px;
-            background: #fff;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            transition: transform 0.5s ease-in-out;
-        }
-        section h2 {
-            color: #1D3557;
-            margin-bottom: 20px;
-        }
-        section p, section ul {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-        section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        section ul li {
-            margin: 10px 0;
-        }
-
-        /* Work Section with Grid */
-        .work-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        .testimonial-slider {
+            display: flex;
+            justify-content: center;
             gap: 20px;
-            margin-top: 50px;
+            overflow: hidden;
+            padding: 20px;
         }
-        .work-card {
-            background: #1D3557;
-            color: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+        .testimonial {
+            background: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            max-width: 400px;
+        }
+
+        .testimonial p {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
             text-align: center;
-            transition: transform 0.3s ease-in-out;
+            padding: 50px 20px;
+            background: #121212;
         }
-        .work-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.8em;
+
+        .contact-form-section form {
+            display: grid;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        .work-card:hover {
-            transform: translateY(-10px);
+
+        .contact-form-section input,
+        .contact-form-section textarea {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form-section button {
+            padding: 10px 20px;
+            background-color: #6a11cb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form-section button:hover {
+            background-color: #2575fc;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px 0;
-            background: #333;
-            color: #fff;
-            position: relative;
+            padding: 30px;
+            background: #6a11cb;
+            color: white;
         }
+
         footer a {
-            color: #F1C40F;
+            color: #f1c40f;
             text-decoration: none;
-            font-weight: bold;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        /* Scroll Animations */
-        .animate-scroll {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .animate-scroll.visible {
-            opacity: 1;
-        }
-
-        /* Parallax Effect */
-        .parallax {
-            background-image: url('https://via.placeholder.com/1920x1080');
-            background-attachment: fixed;
-            background-size: cover;
-            height: 500px;
-            position: relative;
-            z-index: 0;
         }
     </style>
 </head>
 <body>
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Harsh Pandey - Portfolio</title>
-        <style>
-            /* Global Styles */
-            body {
-                font-family: 'Arial', sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f4f4f9;
-                color: #333;
-            }
-    
-            /* Header Section */
-            header {
-                background: linear-gradient(to right, #6a11cb, #2575fc);
-                color: white;
-                padding: 40px 20px;
-                text-align: center;
-            }
-            header h1 {
-                font-size: 3em;
-                margin: 0;
-            }
-            header p {
-                font-size: 1.3em;
-                margin-top: 10px;
-            }
-    
-            /* Profile Section */
-            .profile-section {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-top: 50px;
-                padding: 20px;
-                transition: transform 1s ease-in-out;
-            }
-    
-            .profile-section:hover {
-                transform: translateX(10px);
-            }
-    
-            .profile-text {
-                flex: 1;
-                padding: 20px;
-                animation: fadeIn 1s ease-in-out;
-            }
-    
-            .profile-text h2 {
-                font-size: 2.5em;
-                color: #2575fc;
-            }
-    
-            .profile-text p {
-                font-size: 1.2em;
-                line-height: 1.6;
-            }
-    
-            .profile-image {
-                flex: 1;
-                text-align: right;
-                animation: slideIn 1.5s ease-out;
-            }
-    
-            .profile-image img {
-                width: 300px; /* Increased width */
-                height: 300px; /* Increased height */
-                border-radius: 50%;
-                border: 4px solid #2575fc;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            }
-    
-            /* Animation */
-            @keyframes fadeIn {
-                0% {
-                    opacity: 0;
-                    transform: translateY(-30px);
-                }
-                100% {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-    
-            @keyframes slideIn {
-                0% {
-                    transform: translateX(200px);
-                    opacity: 0;
-                }
-                100% {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-    
-            /* Link Styling */
-            a {
-                color: #2575fc;
-                text-decoration: none;
-                font-weight: bold;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-        </style>
-    </head>
-    <body>
-    
-        <header>
-            <h1>Harsh Pandey</h1>
-            <p>"Building Digital Futures | Harnessing Technology, One Innovation at a Time"</p>
-        </header>
-    
-        <div class="profile-section">
-            <!-- Text Section -->
-            <div class="profile-text">
-                <h2>Harsh Pandey</h2>
-                <p>Email: <a href="mailto:harshap17058@gmail.com">harshap17058@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/harsh-pandey-8781792a2" target="_blank">linkedin.com/in/harsh-pandey-8781792a2</a></p>
-            </div>
-    
-            <!-- Image Section -->
-            <div class="profile-image">
-                <!-- Replace this with your profile picture -->
-                <img src="HARSH%20PHOTO.jpg" alt="Profile Picture">
-
-            </div>
-        </div>
-    
-    </body>
-    </html>
-    
-
-
+    <div class="intro">
+        <h1>Hi, I'm Harsh Pandey</h1>
+        <span>Freelancer | Data Analyst | Web Developer | App Developer</span>
+    </div>
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
+        <div class="logo">Harsh Portfolio</div>
+        <div class="menu">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
-    <section id="about" class="animate-scroll">
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>"Building Digital Futures | Harnessing Technology, One Innovation at a Time"</p>
+    </header>
+
+    <section class="profile-section">
+        <h2>Harsh Pandey</h2>
+        <p>Email: <a href="mailto:harshap17058@gmail.com">harshap17058@gmail.com</a></p>
+        <div class="social-links">
+            <a href="https://github.com/debugHARSH" target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 40px; height: 40px;"></a>
+            <a href="https://www.linkedin.com/in/harsh-pandey-8781792a2" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="width: 40px; height: 40px;"></a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
         <h2>About Me</h2>
-        <p>I am a B.Tech candidate at MIT ADT University, passionate about cloud computing and emerging technologies. I aim to contribute to white-collar IT jobs in cloud computing.</p>
+        <p>I am a passionate and detail-oriented professional with a deep love for technology and innovation. My expertise spans programming, cloud computing, and database design. I strive to create impactful solutions that drive value and enhance user experiences, blending creativity and technical prowess to deliver excellence.</p>
     </section>
 
-    <section id="skills" class="animate-scroll">
-        <h2>Skills</h2>
-        <ul>
-            <li><b>Programming Languages:</b> Java, Python, Swift, HTML/CSS</li>
-            <li><b>Frameworks & Tools:</b> Android, Xcode, UIKit, Tableau</li>
-            <li><b>Specialization:</b> Cloud Computing, Database Design</li>
-        </ul>
+<section id="skills" class="skills-section">
+    <h2>Skills</h2>
+    <p><strong>Programming Languages:</strong> Java, Python, Swift, HTML/CSS</p>
+    <p><strong>Frameworks & Tools:</strong> Android, Xcode, UIKit, Tableau</p>
+    <p><strong>Specialization:</strong> Cloud Computing, Database Design</p>
+    
+    <!-- Skill Progress Bars -->
+    <h3>Skill Progress</h3>
+    <div class="skill-category">
+        <div class="skill">
+            <label for="java">Java</label>
+            <div class="progress" id="java" style="width: 90%; background-color: #ff7f50;"></div>
+        </div>
+        <div class="skill">
+            <label for="python">Python</label>
+            <div class="progress" id="python" style="width: 80%; background-color: #ff6347;"></div>
+        </div>
+        <div class="skill">
+            <label for="swift">Swift</label>
+            <div class="progress" id="swift" style="width: 75%; background-color: #1e90ff;"></div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="testimonials" class="testimonials-section">
+        <h2>Testimonials</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>"Harsh is an exceptional developer. His work always exceeds expectations!" - John Doe</p>
+            </div>
+            <div class="testimonial">
+                <p>"Fantastic app development. Highly recommend working with Harsh." - Jane Smith</p>
+            </div>
+            <div class="testimonial">
+                <p>"A great team player and problem solver. Truly enjoyed working together!" - Michael Lee</p>
+            </div>
+        </div>
     </section>
 
-    <section id="projects" class="animate-scroll">
+    <section id="projects" class="work-section">
         <h2>Projects</h2>
-        <ul>
-            <li><b>Tracker X:</b> An Android app for managing project-based learning activities.</li>
-            <li><b>Brain Match App:</b> A Swift-based AI-powered compatibility-checking app.</li>
-            <li><b>Game or Timetable Manager:</b> A gamified productivity app for students.</li>
-        </ul>
-    </section>
-
-    <section id="work" class="animate-scroll">
-        <h2>My Work</h2>
-        <div class="work-section">
+        <div class="work-cards">
             <div class="work-card">
                 <h3>Tracker X</h3>
                 <p>An Android app for managing PBL activities.</p>
@@ -369,30 +421,34 @@
         </div>
     </section>
 
-    <section id="contact" class="animate-scroll">
+    <section id="contact-form" class="contact-form-section">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:harshap17058@gmail.com">harshap17058@gmail.com</a></p>
-        <p>Phone: +91 8208573180</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/harsh-pandey-8781792a2" target="_blank">linkedin.com/in/harsh-pandey-8781792a2</a></p>
-        <p>GitHub: <a href="https://github.com/debugHARSH" target="_blank">github.com/debugHARSH</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Harsh Pandey. All Rights Reserved.</p>
-        <p>Built with ❤️ by <a href="https://github.com/debugHARSH" target="_blank">Harsh Pandey</a></p>
-    </footer>
-
-    <script>
-        // Scroll-based animation
-        window.addEventListener('scroll', () => {
-            const elements = document.querySelectorAll('.animate-scroll');
-            elements.forEach((el) => {
-                if (el.getBoundingClientRect().top < window.innerHeight) {
-                    el.classList.add('visible');
-                }
-            });
-        });
-    </script>
-
+        <form action="mailto:harshap17058@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+        <section id="reach-out" class="reach-out-section">
+            <h2>Reach Out to Me</h2>
+            <p>If you have any questions, feel free to reach out!</p>
+            <p><strong>Harsh Pandey</strong></p>
+            <p>Email: <a href="mailto:harshap17058@gmail.com">harshap17058@gmail.com</a></p>
+            <div class="social-links">
+                <a href="https://github.com/debugHARSH" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/harsh-pandey-8781792a2" target="_blank">LinkedIn</a>
+            </div>
+        </section>
+    
+        <footer>
+            <p>&copy; 2025 Harsh Pandey. All Rights Reserved.</p>
+            <p>Built with ❤️ by <a href="https://github.com/debugHARSH" target="_blank">Harsh Pandey</a></p>
+        </footer>
 </body>
 </html>
