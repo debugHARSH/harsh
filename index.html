@@ -68,15 +68,12 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            animation: fadeOut 3s ease forwards;
-            animation-delay: 3s;
         }
 
         .intro h1 {
             font-size: 3em;
             color: #f1c40f;
             text-align: center;
-            animation: slideDown 1.5s ease;
         }
 
         .intro span {
@@ -84,35 +81,6 @@
             font-size: 1.2em;
             color: #ffffff;
             margin-top: 20px;
-            animation: fadeIn 2s ease;
-            animation-delay: 1s;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         /* Header Section */
@@ -126,16 +94,6 @@
         header h1 {
             font-size: 4em;
             margin: 0;
-            animation: textGlow 1.5s infinite alternate;
-        }
-
-        @keyframes textGlow {
-            from {
-                text-shadow: 0 0 10px #6a11cb, 0 0 20px #2575fc;
-            }
-            to {
-                text-shadow: 0 0 20px #f1c40f, 0 0 30px #f1c40f;
-            }
         }
 
         header p {
@@ -178,12 +136,10 @@
         .about-section {
             text-align: center;
             padding: 50px 20px;
-            background: #1d1d1d;
-            transition: background 0.5s;
-        }
-
-        .about-section:hover {
-            background: linear-gradient(to right, #1d1d1d, #6a11cb);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 20px;
         }
 
         .about-section h2 {
@@ -229,54 +185,8 @@
         }
 
         .work-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-        }
-
-        /* Skill Progress Bars */
-        .progress-bar {
-            margin-top: 20px;
-            font-size: 1.2em;
-        }
-
-        .progress-bar label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .progress {
-            height: 10px;
-            background-color: #6a11cb;
-            border-radius: 5px;
-        }
-
-        /* Testimonial Section */
-        .testimonials-section {
-            text-align: center;
-            padding: 50px 20px;
-            background: #1d1d1d;
-        }
-
-        .testimonial-slider {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            overflow: hidden;
-            padding: 20px;
-        }
-
-        .testimonial {
-            background: #2c3e50;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            max-width: 400px;
-        }
-
-        .testimonial p {
-            font-size: 1.2em;
-            margin: 0;
+            transform: perspective(1000px) rotateY(20deg) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
         }
 
         /* Contact Form Section */
@@ -329,126 +239,126 @@
     </style>
 </head>
 <body>
-    <div class="intro">
-        <h1>Hi, I'm Harsh Pandey</h1>
-        <span>Freelancer | Data Analyst | Web Developer | App Developer</span>
+<div class="intro">
+    <h1>Hi, I'm Harsh Pandey</h1>
+    <span>Freelancer | Data Analyst | Web Developer | App Developer</span>
+</div>
+
+<nav>
+    <div class="logo">Harsh Portfolio</div>
+    <div class="menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </div>
+</nav>
 
-    <nav>
-        <div class="logo">Harsh Portfolio</div>
-        <div class="menu">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+<header>
+    <h1>Welcome to My Portfolio</h1>
+    <p>"Building Digital Futures | Harnessing Technology, One Innovation at a Time"</p>
+</header>
 
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>"Building Digital Futures | Harnessing Technology, One Innovation at a Time"</p>
-    </header>
+<section class="profile-section">
+    <h2>Harsh Pandey</h2>
+    <p>Email: <a href="mailto:harshap17058@gmail.com">harshap17058@gmail.com</a></p>
+    <div class="social-links">
+        <a href="https://github.com/debugHARSH" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/harsh-pandey-8781792a2" target="_blank">LinkedIn</a>
+    </div>
+</section>
 
-    <section class="profile-section">
-        <h2>Harsh Pandey</h2>
-        <p>Email: <a href="mailto:harshap17058@gmail.com">harshap17058@gmail.com</a></p>
-        <div class="social-links">
-            <a href="https://github.com/debugHARSH" target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 40px; height: 40px;"></a>
-            <a href="https://www.linkedin.com/in/harsh-pandey-8781792a2" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="width: 40px; height: 40px;"></a>
-        </div>
-    </section>
+<section id="about" class="about-section">
+    <h2>About Me</h2>
+    <p>I am a passionate and detail-oriented professional with a deep love for technology and innovation. My expertise spans programming, cloud computing, and database design. I strive to create impactful solutions that drive value
+        for businesses and individuals. My goal is to bridge the gap between ideas and execution through innovative and scalable designs.</p>
+</section>
 
-    <section id="about" class="about-section">
-        <h2>About Me</h2>
-        <p>I am a passionate and detail-oriented professional with a deep love for technology and innovation. My expertise spans programming, cloud computing, and database design. I strive to create impactful solutions that drive value and enhance user experiences, blending creativity and technical prowess to deliver excellence.</p>
-    </section>
-
-<section id="skills" class="skills-section">
+<section id="skills" class="work-section">
     <h2>Skills</h2>
-    <p><strong>Programming Languages:</strong> Java, Python, Swift, HTML/CSS</p>
-    <p><strong>Frameworks & Tools:</strong> Android, Xcode, UIKit, Tableau</p>
-    <p><strong>Specialization:</strong> Cloud Computing, Database Design</p>
-    
-    <!-- Skill Progress Bars -->
-    <h3>Skill Progress</h3>
-    <div class="skill-category">
-        <div class="skill">
-            <label for="java">Java</label>
-            <div class="progress" id="java" style="width: 90%; background-color: #ff7f50;"></div>
+    <div class="work-cards">
+        <div class="work-card">
+            <h3>Programming Languages</h3>
+            <p>JavaScript, Python, Java, C++, C</p>
         </div>
-        <div class="skill">
-            <label for="python">Python</label>
-            <div class="progress" id="python" style="width: 80%; background-color: #ff6347;"></div>
+        <div class="work-card">
+            <h3>Web Development</h3>
+            <p>HTML, CSS, React, Node.js</p>
         </div>
-        <div class="skill">
-            <label for="swift">Swift</label>
-            <div class="progress" id="swift" style="width: 75%; background-color: #1e90ff;"></div>
+        <div class="work-card">
+            <h3>Data Analytics</h3>
+            <p>SQL, Tableau, </p>
+        </div>
+        <div class="work-card">
+            <h3>Cloud Technologies</h3>
+            <p>AWS, Azure, GCP</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="work-section">
+    <h2>Projects</h2>
+    <div class="work-cards">
+        <div class="work-card">
+            <h3>Portfolio Website</h3>
+            <p>A responsive and interactive portfolio website built with HTML, CSS, and JavaScript.</p>
+            <a href="#" style="color: #6a11cb; text-decoration: none;">View Project</a>
+        </div>
+        <div class="work-card">
+            <h3>Tracker X</h3>
+            <p>An Android app for managing PBL activities.</p>
+            <a href="#" style="color: #6a11cb; text-decoration: none;">View Project</a>
+        </div>
+        <div class="work-card">
+            <h3>Brain Match App</h3>
+            <p>AI-powered compatibility app built in Swift.</p>
+            <a href="#" style="color: #6a11cb; text-decoration: none;">View Project</a>
+        </div>
+        <div class="work-card">
+            <h3>Game or Timetable Manager</h3>
+            <p>Gamified productivity app for students.</p>
+            <a href="#" style="color: #6a11cb; text-decoration: none;">View Project</a>
         </div>
     </div>
 </section>
 
 
-    <section id="testimonials" class="testimonials-section">
-        <h2>Testimonials</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial">
-                <p>"Harsh is an exceptional developer. His work always exceeds expectations!" - John Doe</p>
-            </div>
-            <div class="testimonial">
-                <p>"Fantastic app development. Highly recommend working with Harsh." - Jane Smith</p>
-            </div>
-            <div class="testimonial">
-                <p>"A great team player and problem solver. Truly enjoyed working together!" - Michael Lee</p>
-            </div>
-        </div>
-    </section>
+<section id="contact" class="contact-form-section">
+    <h2>Contact Me</h2>
+    <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
 
-    <section id="projects" class="work-section">
-        <h2>Projects</h2>
-        <div class="work-cards">
-            <div class="work-card">
-                <h3>Tracker X</h3>
-                <p>An Android app for managing PBL activities.</p>
-            </div>
-            <div class="work-card">
-                <h3>Brain Match App</h3>
-                <p>AI-powered compatibility app built in Swift.</p>
-            </div>
-            <div class="work-card">
-                <h3>Game or Timetable Manager</h3>
-                <p>Gamified productivity app for students.</p>
-            </div>
-        </div>
-    </section>
+<footer>
+    <p>&copy; 2025 Harsh Pandey | Built with ❤️ and creativity.</p>
+    <p>Follow me on <a href="https://github.com/debugHARSH" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/harsh-pandey-8781792a2" target="_blank">LinkedIn</a></p>
+</footer>
 
-    <section id="contact-form" class="contact-form-section">
-        <h2>Contact Me</h2>
-        <form action="mailto:harshap17058@gmail.com" method="post" enctype="text/plain">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Send</button>
-        </form>
-        <section id="reach-out" class="reach-out-section">
-            <h2>Reach Out to Me</h2>
-            <p>If you have any questions, feel free to reach out!</p>
-            <p><strong>Harsh Pandey</strong></p>
-            <p>Email: <a href="mailto:harshap17058@gmail.com">harshap17058@gmail.com</a></p>
-            <div class="social-links">
-                <a href="https://github.com/debugHARSH" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/harsh-pandey-8781792a2" target="_blank">LinkedIn</a>
-            </div>
-        </section>
-    
-        <footer>
-            <p>&copy; 2025 Harsh Pandey. All Rights Reserved.</p>
-            <p>Built with ❤️ by <a href="https://github.com/debugHARSH" target="_blank">Harsh Pandey</a></p>
-        </footer>
+<script>
+    // Intro animation removal after 3 seconds
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            const intro = document.querySelector('.intro');
+            intro.style.opacity = '0';
+            setTimeout(() => {
+                intro.style.display = 'none';
+            }, 1000);
+        }, 3000);
+    });
+
+    // Smooth scrolling for navigation links
+    const links = document.querySelectorAll('nav .menu a');
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(e.target.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
 </body>
 </html>
